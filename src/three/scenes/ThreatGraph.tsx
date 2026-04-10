@@ -72,7 +72,7 @@ function Node({ node }: { node: any }) {
         <icosahedronGeometry args={[1.2, 0]} />
         <meshBasicMaterial color={node.color} wireframe />
       </mesh>
-      <Text position={[0, 1.8, 0]} fontSize={0.6} color={node.color} opacity={hovered ? 1 : 0.8}>
+      <Text position={[0, 1.8, 0]} fontSize={0.6} color={node.color} fillOpacity={hovered ? 1 : 0.8}>
         {node.label}
       </Text>
     </group>

@@ -98,13 +98,12 @@ function ProjectCard({ project, position, rotation }: any) {
           {project.description}
         </Text>
         
-        <Text 
-          position={[0, -1.5, 0.15]} 
-          fontSize={0.12} 
-          color={project.color} 
-          opacity={0.8}
-        >
-          {project.tags.join(' // ')}
+        <Text
+          position={[0, -1.5, 0.15]}
+          fontSize={0.12}
+          color={project.color}
+          fillOpacity={0.8}
+        >          {project.tags.join(' // ')}
         </Text>
       </group>
 
