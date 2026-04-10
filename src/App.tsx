@@ -5,6 +5,7 @@ import { useReducedMotion } from './hooks/useReducedMotion';
 
 import Navbar from './components/Navbar';
 import HexGrid from './components/HexGrid';
+import ParticlesBackground from './components/ParticlesBackground';
 
 // Lazy load sections
 const Hero = React.lazy(() => import('./sections/Hero'));
@@ -53,11 +54,12 @@ function App() {
   }, [prefersReducedMotion]);
 
   return (
-    <div className="bg-cyber-bg text-white min-h-screen selection:bg-cyber-neon selection:text-cyber-bg" ref={mainRef}>
+    <div className="bg-cyber-bg text-white min-h-screen selection:bg-cyber-neon selection:text-cyber-bg relative" ref={mainRef}>
+      <ParticlesBackground />
       <Navbar />
       <HexGrid />
       <Suspense fallback={<CyberLoader />}>
-        <main>
+        <main className="relative z-10">
           <Hero />
           <About />
           <Projects />

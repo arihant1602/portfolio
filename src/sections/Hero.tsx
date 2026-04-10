@@ -1,11 +1,18 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import GlitchText from '../components/GlitchText';
 import CyberButton from '../components/CyberButton';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-cyber-bg">
-      <div className="relative z-10 text-center flex flex-col items-center mt-20">
+    <section id="hero" className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-transparent">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 text-center flex flex-col items-center mt-20"
+      >
         <div className="mb-4 text-cyber-neon font-mono text-sm tracking-[0.2em] opacity-80 uppercase">
           [INITIALIZING...]
         </div>
@@ -19,7 +26,7 @@ export default function Hero() {
           <CyberButton onClick={() => window.location.href='#projects'}>View Work</CyberButton>
           <CyberButton onClick={() => window.location.href='#contact'} className="!text-cyber-cyan border-cyber-cyan/50 hover:!border-cyber-cyan">Contact</CyberButton>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

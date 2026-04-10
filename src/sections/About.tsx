@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import TerminalWindow from '../components/TerminalWindow';
 import GlitchText from '../components/GlitchText';
 
@@ -20,8 +21,14 @@ security principles.
 [ONLINE] Ready for new contracts.`;
 
   return (
-    <section id="about" className="py-24 relative min-h-screen flex items-center">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-24 relative min-h-screen flex items-center bg-transparent">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        className="container mx-auto px-6"
+      >
         <h2 className="text-4xl font-bold font-mono text-cyber-neon mb-12 text-center lg:text-left">
           <GlitchText text="01. ABOUT_ME" />
         </h2>
@@ -32,7 +39,7 @@ security principles.
             </pre>
           </TerminalWindow>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
