@@ -27,7 +27,7 @@ export default function Projects() {
       </div>
       
       <div className="w-full h-[600px] relative z-10 cursor-grab active:cursor-grabbing">
-        <Canvas camera={{ position: [0, 2, 8], fov: 60 }}>
+        <Canvas camera={{ position: [0, 4, 30], fov: 60 }}>
           <ambientLight intensity={0.5} />
           <Suspense fallback={null}>
             <ProjectCarousel />

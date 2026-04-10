@@ -11,7 +11,7 @@ export default function ThreatGraph() {
   const nodes = useMemo(() => {
     return skills.map((skill, i) => {
       const angle = (i / skills.length) * Math.PI * 2;
-      const radius = 3.5 + Math.random() * 2.5;
+      const radius = 4.5 + Math.random() * 3.5;
       return {
         ...skill,
         pos: new THREE.Vector3(
@@ -69,10 +69,10 @@ function Node({ node }: { node: any }) {
         onPointerOver={() => setHover(true)} 
         onPointerOut={() => setHover(false)}
       >
-        <icosahedronGeometry args={[1.2, 0]} />
+        <icosahedronGeometry args={[2.5, 0]} />
         <meshBasicMaterial color={node.color} wireframe />
       </mesh>
-      <Text position={[0, 1.8, 0]} fontSize={0.6} color={node.color} fillOpacity={hovered ? 1 : 0.8}>
+      <Text position={[0, 3.2, 0]} fontSize={1.2} color={node.color} fillOpacity={hovered ? 1 : 0.8}>
         {node.label}
       </Text>
     </group>
