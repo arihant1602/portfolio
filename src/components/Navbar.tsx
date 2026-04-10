@@ -13,8 +13,9 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-cyber-surface/90 backdrop-blur-md border-b border-cyber-neon/20 py-4' : 'bg-transparent py-6'}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-cyber-bg/30 backdrop-blur-[12px] border-b border-cyber-neon/10 py-4 shadow-[0_4px_30px_rgba(0,0,0,0.3)]' : 'bg-transparent py-6'}`}>
+      <div className="absolute inset-0 bg-gradient-to-b from-cyber-bg/80 to-transparent pointer-events-none -z-10" />
+      <div className="container mx-auto px-6 flex justify-between items-center relative z-10">
         <div className="text-xl font-bold text-cyber-neon font-mono">
           <GlitchText text="ARIHANT_OS" />
         </div>
@@ -26,7 +27,7 @@ export default function Navbar() {
             </a>
           ))}
         </div>
-        <button className="text-cyber-neon font-mono text-sm px-4 py-2 border border-cyber-neon/50 hover:bg-cyber-neon/10 transition-colors animate-pulse">
+        <button onClick={() => window.location.href='#contact'} className="text-cyber-neon font-mono text-sm px-4 py-2 border border-cyber-neon/50 hover:bg-cyber-neon/10 hover:border-cyber-neon transition-colors">
           [ HIRE ME ]
         </button>
       </div>
