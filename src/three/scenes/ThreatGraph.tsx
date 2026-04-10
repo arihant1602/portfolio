@@ -11,12 +11,12 @@ export default function ThreatGraph() {
   const nodes = useMemo(() => {
     return skills.map((skill, i) => {
       const angle = (i / skills.length) * Math.PI * 2;
-      const radius = 4.5 + Math.random() * 3.5;
+      const radius = 10 + Math.random() * 8;
       return {
         ...skill,
         pos: new THREE.Vector3(
           Math.sin(angle) * radius,
-          (Math.random() - 0.5) * 5,
+          (Math.random() - 0.5) * 12,
           Math.cos(angle) * radius
         ),
         color: skill.category === 'offensive' ? '#ff2d55' : 

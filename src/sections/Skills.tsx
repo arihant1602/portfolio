@@ -12,8 +12,8 @@ export default function Skills() {
         </h2>
       </div>
       
-      <div className="flex-1 w-full relative z-10 h-[600px]">
-        <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
+      <div className="flex-1 w-full relative z-10 h-[800px] min-h-[800px]">
+        <Canvas camera={{ position: [0, 0, 35], fov: 50 }}>
           <Suspense fallback={null}>
             <ThreatGraph />
           </Suspense>
